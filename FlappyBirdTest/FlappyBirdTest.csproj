@@ -14,9 +14,13 @@
     <None Remove="images\flappyBird.png" />
     <None Remove="images\pipeBottom.png" />
     <None Remove="images\pipeTop.png" />
+    <None Remove="scores.txt" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="scores.txt">
+      <Generator>MSBuild:Compile</Generator>
+    </Resource>
     <Resource Include="sounds\backgroundMusic.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>

@@ -1,19 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
+using System.IO;
+using System.Collections.Generic;
+
 namespace FlappyBirdTest
 {
     /// <summary>
@@ -29,6 +25,7 @@ namespace FlappyBirdTest
         bool goUp;
         int score = 0;
         DispatcherTimer timer;
+        int highScore;
         MediaPlayer background = new MediaPlayer();
         System.Media.SoundPlayer chirp = new System.Media.SoundPlayer(Environment.CurrentDirectory + @"\sounds\chirp.wav");
 
@@ -41,6 +38,7 @@ namespace FlappyBirdTest
             timer.Interval = TimeSpan.FromMilliseconds(10);
             //timer.Start();
             timer.Tick += _timer_Tick;
+            highScore = BitConverter.ToInt32(File.ReadAllBytes("scores.txt"));
             background.MediaEnded += startAgain;
             background.Open(new Uri(Environment.CurrentDirectory + @"\sounds\backgroundMusic.wav"));
             background.Play();
@@ -149,7 +147,13 @@ namespace FlappyBirdTest
                             Canvas.SetTop(rec, Canvas.GetTop(rec)+2);
                             timer.Stop();
                             //MessageBox.Show("Game Over");
-                            label2.Content = "Press Space to restart!";
+                            label3.Content = "Press Space to restart!";
+                            if(score>highScore)
+                            {
+                                highScore = score;
+                                File.WriteAllBytes("scores.txt",BitConverter.GetBytes(highScore));
+                            }
+                            label4.Content = "High Score:" + highScore;
 
                         }
                       //  else
@@ -227,6 +231,8 @@ namespace FlappyBirdTest
             background.Play();
             Thread.Sleep(500);
             label2.Content = "";
+            label3.Content = "";
+            label4.Content = "";
             timer.Start();
 
         }

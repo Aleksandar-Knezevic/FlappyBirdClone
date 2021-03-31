@@ -68,7 +68,11 @@
 
         <Label FontSize="30" Name="label" Canvas.Left="125" FontWeight="Bold">Score:</Label>
 
-        <Label FontSize="30" Name="label2" Canvas.Left="53" FontWeight="Bold" Canvas.Top="180">Press Space to start!</Label>
+        <Label FontSize="30" Name="label2" Canvas.Left="45" FontWeight="Bold" Canvas.Top="180">Press Space to start!</Label>
+
+        <Label FontSize="30" Name="label3" Canvas.Left="39" FontWeight="Bold" Canvas.Top="180"></Label>
+        <Label FontSize="30" Name="label4" Canvas.Left="98" FontWeight="Bold" Canvas.Top="230"></Label>
+
 
 
     </Canvas>
