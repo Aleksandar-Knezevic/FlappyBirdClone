@@ -11,13 +11,13 @@
 
 
 
-        <Rectangle Width="153" Height="64" Canvas.Left="200" Canvas.Top="90" Name="cloud1">
+        <Rectangle Width="180" Height="85" Canvas.Left="187" Canvas.Top="90" Name="cloud1">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="/images/clouds.png"></ImageBrush>
             </Rectangle.Fill>
         </Rectangle>
 
-        <Rectangle Width="129" Height="57" Canvas.Left="45" Canvas.Top="240" Name="cloud2">
+        <Rectangle Width="147" Height="72" Canvas.Left="45" Canvas.Top="240" Name="cloud2">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="/images/clouds2.png"></ImageBrush>
             </Rectangle.Fill>

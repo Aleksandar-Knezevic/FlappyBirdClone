@@ -35,7 +35,7 @@ namespace FlappyBirdTest
 
             MyCanvas.Focus();
             timer = new DispatcherTimer();
-            timer.Interval = TimeSpan.FromMilliseconds(10);
+            timer.Interval = TimeSpan.FromMilliseconds(1);
             //timer.Start();
             timer.Tick += _timer_Tick;
             highScore = BitConverter.ToInt32(File.ReadAllBytes("scores.txt"));
