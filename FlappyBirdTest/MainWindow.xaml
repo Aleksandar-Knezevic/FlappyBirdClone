@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FlappyBirdTest"
         mc:Ignorable="d"
-        Title="FlappyBird" Height="450" Width="400" ResizeMode="NoResize">
+        Title="FlappyBird" Height="450" Width="400" ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen">
     <Canvas x:Name="MyCanvas" KeyDown="Canvas_KeyDown" KeyUp="Canvas_KeyUp" Focusable="True" IsEnabled="True" Background="SkyBlue">
 
 
